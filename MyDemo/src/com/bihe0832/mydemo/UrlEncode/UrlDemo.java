@@ -1,5 +1,6 @@
 package com.bihe0832.mydemo.UrlEncode;
 
+
 import android.util.Log;
 
 public class UrlDemo {

@@ -1,4 +1,4 @@
-package com.bihe0832.mydemo.common;
+package com.bihe0832.common;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -22,7 +22,7 @@ public class Logger {
     private static final int   LOG_FILE      = 2; // file log
     private static final int   LOG_BOTH      = 3; // both
     
-    // log类型，与系统保持一致
+    // log类型，与系统保持�?�?
     private static final int   VERBOSE       = 2;
     private static final int   DEBUG         = 3;
     private static final int   INFO          = 4;
@@ -35,7 +35,7 @@ public class Logger {
     public static final String FILE_LOG = "bihe0832.log";
     private static int logDevice = LOG_CONSOLE;
     private static FileLogHandler fileLog;
-    //调用栈深度
+    //调用栈深�?
     private static final int STACK_TRACE_DEEP = 4;
     //本地日志文件大小
     private static final long LOG_FILE_SIZE = 10 * 1024 * 1024;
@@ -275,7 +275,7 @@ public class Logger {
             return;
         }
 
-        Set<String> keys = b.keySet(); // 手Q通过这种方式传 platformId
+        Set<String> keys = b.keySet(); // 手Q通过这种方式�? platformId
         for (String key : keys) {
             if (b.get(key) instanceof byte[]) {
                 Logger.showLog(DEBUG, tag,
