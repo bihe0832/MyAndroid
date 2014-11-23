@@ -1,5 +1,6 @@
 package com.bihe0832.common;
 
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class Logger {
     private static final int   LOG_FILE      = 2; // file log
     private static final int   LOG_BOTH      = 3; // both
     
-    // log类型，与系统保持�?�?
+    // log类型，与系统保持一致
     private static final int   VERBOSE       = 2;
     private static final int   DEBUG         = 3;
     private static final int   INFO          = 4;
@@ -31,13 +32,10 @@ public class Logger {
     @SuppressWarnings("unused")
 	private static final int   ASSERT        = 7;
     
-    public static final String DEFAULT_TAG = "bihe0832";
-    public static final String FILE_LOG = "bihe0832.log";
+    public static final String DEFAULT_TAG = "AGSDK";
     private static int logDevice = LOG_CONSOLE;
     private static FileLogHandler fileLog;
-    //调用栈深�?
     private static final int STACK_TRACE_DEEP = 4;
-    //本地日志文件大小
     private static final long LOG_FILE_SIZE = 10 * 1024 * 1024;
     
     public static void init(String logTypeString) {
@@ -81,7 +79,7 @@ public class Logger {
                 return;
             }
             try {
-                logFile = Logger.getLogFile();
+                logFile = FileUtils.getLogFile();
                 if (!logFile.exists()) {
                     logFile.createNewFile();
                 } else {
@@ -126,7 +124,7 @@ public class Logger {
     
     
     private static void showLog(int logType, String tag, String msg, int device) {
-        if (T.ckIsEmpty(msg)){
+        if (CommonUtil.ckIsEmpty(msg)){
             msg = "NULL MSG";
         }
         if (tag.length() > 89){
@@ -197,7 +195,7 @@ public class Logger {
             shortClsName = clsName.substring(dot + 1);
         }
 
-        if (T.ckIsEmpty(subTag)) {
+        if (CommonUtil.ckIsEmpty(subTag)) {
              tag =  DEFAULT_TAG + " " + shortClsName + "." + methodName;
         } else {
              tag =  DEFAULT_TAG + ">" + subTag + " " + shortClsName + "."
@@ -275,7 +273,7 @@ public class Logger {
             return;
         }
 
-        Set<String> keys = b.keySet(); // 手Q通过这种方式�? platformId
+        Set<String> keys = b.keySet(); // 手Q通过这种方式传 platformId
         for (String key : keys) {
             if (b.get(key) instanceof byte[]) {
                 Logger.showLog(DEBUG, tag,
@@ -310,7 +308,7 @@ public class Logger {
         Logger.showLog(DEBUG, tag, "Scheme: " + i.getScheme(), logDevice);
 
         Bundle b = i.getExtras();
-        Set<String> keys = b.keySet(); 
+        Set<String> keys = b.keySet(); // 手Q通过这种方式传 platformId
         for (String key : keys) {
             if (b.get(key) instanceof byte[]) {
                 Logger.showLog(DEBUG, tag,
@@ -334,7 +332,4 @@ public class Logger {
         }
     }
     
-    public static File getLogFile() {
-        return new File(FileUtils.getExternalRootDir(), Logger.FILE_LOG);
-    }
 }

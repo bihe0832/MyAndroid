@@ -1,6 +1,7 @@
 package com.bihe0832.common;
 
 
+
 public class HexUtil
 {
     private static final char[] digits = new char[] { '0', '1', '2', '3', '4',//
@@ -48,7 +49,7 @@ public class HexUtil
     }
 
     /**
-     * 将单个hex Str转换成字�?
+     * 将单个hex Str转换成字节
      * @param str
      * @return byte
      */
@@ -65,7 +66,7 @@ public class HexUtil
     }
 
     /**
-     * 字符到字�?
+     * 字符到字节
      * @param ch
      * @return byte
      */
@@ -106,4 +107,27 @@ public class HexUtil
         return bytes;
     }
 
+    public static void main(String[] args)
+    {
+
+        long begin = System.currentTimeMillis();
+
+        for (int i = 0; i < 1000000; i++)
+        {
+            String input = "234";
+            input = input + i;
+            byte[] inputBytes = input.getBytes();
+            String encode = bytes2HexStr(inputBytes);
+            byte[] bytes = hexStr2Bytes(encode);
+            //            if (i % 1000 == 0)
+            {
+                String result = new String(bytes);
+                if (!result.equals(input))
+                {
+                    System.out.println("error:" + input);
+                }
+            }
+        }
+        System.out.println("use:" + (System.currentTimeMillis() - begin));
+    }
 }
