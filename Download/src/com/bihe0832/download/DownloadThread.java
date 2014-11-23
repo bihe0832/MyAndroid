@@ -239,14 +239,4 @@ public class DownloadThread extends Thread {
 		}
 
 	};
-	
-	public static void main(String[] args)
-    {
-		//TODO 找个MSDK的日志
-		addToDownloadQueue(null, null, null);
-		addToDownloadQueue(null, null, null);
-		addToDownloadQueue(null, null, null);
-		addToDownloadQueue(null, null, null);
-        
-    }
 }

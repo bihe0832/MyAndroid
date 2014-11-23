@@ -1,27 +1,17 @@
-package com.bihe0832.vibrator;
-
-import com.bihe0832.mydemo.R;
+package com.bihe0832.Vibrator;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
 
 public class VibratorActivity extends Activity {
-
-	public static final String TAG = "MyDemo";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		//UrlDemo.test();
+		setContentView(R.layout.activity_vibrator);
+		VibratorUtil.Vibrate(this, 100);
+		
+		// 第二个参数是节奏数组，理解为延迟、振动时长，延时，振动时长
+		VibratorUtil.Vibrate(this, new long[] { 50, 200, 100, 300 }, false); 
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
 }
