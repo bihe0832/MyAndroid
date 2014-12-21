@@ -1,6 +1,8 @@
 package com.bihe0832.common;
 
-
+/**
+ * 获取所有应用公用的目录
+ */
 import java.io.File;
 
 import android.os.Environment;

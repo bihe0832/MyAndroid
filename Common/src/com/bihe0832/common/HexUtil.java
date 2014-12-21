@@ -106,28 +106,65 @@ public class HexUtil
         }
         return bytes;
     }
+    
+    /**
+	 * 将bytes字节数据转换为string
+	 * 
+	 * @param bytes
+	 * @return String
+	 */
+	public static final String arrayToString(byte[] bytes) {
+		StringBuffer buff = new StringBuffer();
+		for (int i = 0; i < bytes.length; i++) {
+			buff.append(bytes[i] + " ");
+		}
+		return buff.toString();
+	}
 
-    public static void main(String[] args)
-    {
+	/**
+	 * 将字节数组转换为16进制字符串
+	 * 
+	 * @param _bytes
+	 * @return
+	 */
+	public static String bytes2HexString(byte[] _bytes) {
+		StringBuilder stringBuilder = new StringBuilder("");
+		if (_bytes == null || _bytes.length <= 0) {
+		    Logger.d("on CommonUtil.bytes2HexString _bytes is null !");
+			return null;
+		}
+		for (int i = 0; i < _bytes.length; i++) {
+			int v = _bytes[i] & 0xFF;
+			String hv = Integer.toHexString(v);
+			hv = hv.toUpperCase();
+			if (hv.length() < 2) {
+				stringBuilder.append(0);
+			}
+			stringBuilder.append(hv);
+		}
+		return stringBuilder.toString();
+	}
 
-        long begin = System.currentTimeMillis();
-
-        for (int i = 0; i < 1000000; i++)
-        {
-            String input = "234";
-            input = input + i;
-            byte[] inputBytes = input.getBytes();
-            String encode = bytes2HexStr(inputBytes);
-            byte[] bytes = hexStr2Bytes(encode);
-            //            if (i % 1000 == 0)
-            {
-                String result = new String(bytes);
-                if (!result.equals(input))
-                {
-                    System.out.println("error:" + input);
-                }
-            }
-        }
-        System.out.println("use:" + (System.currentTimeMillis() - begin));
-    }
+	/**
+	 * 将bytes数组转换为二进制字符串
+	 * 
+	 * @param _bytes
+	 * @return
+	 */
+	public static String bytes2BinString(byte[] _bytes) {
+		StringBuilder stringBuilder = new StringBuilder("");
+		if (_bytes == null || _bytes.length <= 0) {
+		    Logger.d("on CommonUtil.bytes2BinString _bytes is null !");
+			return null;
+		}
+		for (int i = 0; i < _bytes.length; i++) {
+			int v = _bytes[i] & 0xFF;
+			String hv = Integer.toBinaryString(v);
+			for (int j = 8; j > hv.length(); j--) {
+				stringBuilder.append("0");
+			}
+			stringBuilder.append(hv);
+		}
+		return stringBuilder.toString();
+	}
 }
