@@ -32,7 +32,7 @@ public class Logger {
     @SuppressWarnings("unused")
 	private static final int   ASSERT        = 7;
     
-    public static final String DEFAULT_TAG = "AGSDK";
+    public static final String DEFAULT_TAG = "bihe0832";
     private static int logDevice = LOG_CONSOLE;
     private static FileLogHandler fileLog;
     private static final int STACK_TRACE_DEEP = 4;

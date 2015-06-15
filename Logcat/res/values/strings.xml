@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">日志抓取</string>
+    <string name="tips_main">日志抓取工具，点击开始抓取开始，点击结束抓取结束。</string>
+    <string name="btn_log_start">开始抓取日志</string>
+    <string name="btn_log_stop">结束抓取日志</string>
+    <string name="btn_log_sendMail">发送给开发者</string>
+
+</resources>
