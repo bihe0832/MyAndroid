@@ -1,3 +1,5 @@
+## 此文档及组件均不再更新维护，最新组件请点击链接查看：[https://android.bihe0832.com/doc/use/libs/noui/lib-download.html](https://android.bihe0832.com/doc/use/libs/noui/lib-download.html)
+
 一个可以满足以下需求的简单的工具类：
 
 - 多线程下载
