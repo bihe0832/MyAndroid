@@ -2,7 +2,7 @@
 
 部分博客代码以及个人常用一些小demo
 
-## 此文档及组件均不再更新维护，最新组件请点击链接查看：[https://android.bihe0832.com/doc/use/libs/noui/lib-download.html](https://android.bihe0832.com/doc/use/libs/noui/lib-download.html)
+## 此文档及组件均不再更新维护，最新组件请点击链接查看：[https://android.bihe0832.com/doc](https://android.bihe0832.com/doc)
 
 ======
 
