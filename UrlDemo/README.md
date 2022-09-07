@@ -1,4 +1,4 @@
-#### 博文地址：[URL编码中的空格(编码以后变为+)](http://blog.bihe0832.com/URL%E7%BC%96%E7%A0%81%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC(%E7%BC%96%E7%A0%81%E4%BB%A5%E5%90%8E%E5%8F%98%E4%B8%BA+).html)
+#### 博文地址：[URL编码中的空格(编码以后变为+)](https://blog.bihe0832.com/URL%E7%BC%96%E7%A0%81%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC(%E7%BC%96%E7%A0%81%E4%BB%A5%E5%90%8E%E5%8F%98%E4%B8%BA+).html)
 
 #### 在HTML4.0.1中，基于RFC-1738标准，‘ ’在URL编码以后为 ‘+’，只有JS中由于基于RFC-2396标准，‘ ’在URL编码以后为‘%20’。
 
